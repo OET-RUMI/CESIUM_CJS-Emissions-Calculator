@@ -13,7 +13,7 @@ yarn-error.log*
 # Environment variable files
 .env
 .env.*
-!.env.example  # Keep an example file for reference if you like
+!.env.example
 
 # Operating system & IDE files
 .DS_Store
