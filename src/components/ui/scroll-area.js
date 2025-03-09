@@ -6,7 +6,7 @@ export function ScrollArea({ className, children, ...props }) {
       className={`relative overflow-auto ${className || ''}`} 
       {...props}
     >
-      <div className="h-full w-full">
+      <div className="h-full w-full text-white">
         {children}
       </div>
     </div>

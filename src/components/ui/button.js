@@ -4,21 +4,21 @@ export function Button({ variant = "default", size = "default", className, icon,
   const getVariantClasses = () => {
     switch (variant) {
       case "default":
-        return "btn-primary"
+        return "btn-primary transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5"
       case "destructive":
-        return "bg-destructive text-destructive-foreground hover:bg-destructive/90"
+        return "destructive-button transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5"
       case "outline":
-        return "border border-input bg-background hover:bg-accent hover:text-accent-foreground"
+        return "border border-input bg-background hover:bg-accent hover:text-accent-foreground transition-all duration-200 hover:shadow-md hover:-translate-y-0.5"
       case "secondary":
-        return "btn-secondary"
+        return "btn-secondary transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5"
       case "accent":
-        return "btn-accent"
+        return "btn-accent transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5"
       case "ghost":
-        return "hover:bg-accent/10 hover:text-accent-foreground"
+        return "ghost-button hover:text-accent-foreground transition-all duration-200 hover:shadow-sm hover:-translate-y-0.5"
       case "link":
-        return "text-primary underline-offset-4 hover:underline"
+        return "text-primary underline-offset-4 hover:underline transition-all duration-200"
       default:
-        return "btn-primary"
+        return "btn-primary transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5"
     }
   }
 

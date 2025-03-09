@@ -132,9 +132,12 @@ const TripLegsPanel = ({ viewer }) => {
     const payload = generateClimatePayload();
     if (!payload) return;
     
-    // In a real app, this would call the actual API
-    // For demo purposes, we'll use the mock response
-    const response = await climatiqApi.generateMockEmissionsResponse(payload);
+    let response = await climatiqApi.calculateEmissions(payload);
+    if(response.error) {
+      console.error("Error generating emissions report:", response.error);
+      response = climatiqApi.generateMockEmissionsResponse();
+    }
+
     setEmissionsReport(response);
     setShowReport(true);
   };
@@ -172,7 +175,7 @@ const TripLegsPanel = ({ viewer }) => {
                 <Button 
                   size="sm"
                   onClick={handleAddLeg}
-                  className="bg-gray-600 hover:bg-gray-500 text-white"
+                  className="bg-gray-600 hover:bg-gray-500 text-white transition-all duration-200 hover:shadow-lg hover:-translate-y-1"
                 >
                   <Plus size={16} className="mr-2" /> Add Leg
                 </Button>
@@ -215,7 +218,7 @@ const TripLegsPanel = ({ viewer }) => {
                       <Button
                         size="sm"
                         onClick={() => handleCargoWeightChange(cargoWeight)}
-                        className="mt-6"
+                        className="mt-6 transition-all duration-200 hover:shadow-md hover:-translate-y-0.5"
                         variant="outline"
                       >
                         Update
@@ -248,7 +251,7 @@ const TripLegsPanel = ({ viewer }) => {
                 <Button 
                   variant="default" 
                   onClick={handleGenerateReport}
-                  className="w-full bg-gray-600 hover:bg-gray-500 text-white"
+                  className="w-full bg-gray-600 hover:bg-gray-500 text-white transition-all duration-200 hover:shadow-lg hover:-translate-y-1"
                 >
                   <BarChart2 size={16} className="mr-2" /> Generate Report
                 </Button>

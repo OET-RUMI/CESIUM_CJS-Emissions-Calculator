@@ -472,13 +472,13 @@ const LegForm = ({ legData, onSave, onCancel }) => {
             type="button" 
             variant="outline" 
             onClick={onCancel}
-            className="border-gray-500 text-gray-300 hover:bg-gray-700"
+            className="leg-form-button border-gray-500 transition-all duration-200 hover:shadow-md hover:-translate-y-0.5"
           >
             <X size={16} className="mr-2" /> Cancel
           </Button>
           <Button 
             type="submit"
-            className="bg-gray-600 hover:bg-gray-500 text-white"
+            className="leg-form-button transition-all duration-200 hover:shadow-lg hover:-translate-y-1"
           >
             <Save size={16} className="mr-2" /> Save
           </Button>

@@ -119,34 +119,34 @@ const AutocompleteInput = ({
     <div className={className}>
       {label && <Label htmlFor={id} className="text-sm mb-1 block text-white">{label}</Label>}
       <div className="relative min-h-10">
-        <Input
-          ref={inputRef}
-          id={id}
-          name={id}
-          type="text"
-          placeholder={placeholder}
-          value={inputValue}
-          onChange={handleInputChange}
-          onKeyDown={(e) => {
-            if (e.key === 'Enter') {
-              if (onChange) {
-                onChange({
-                  target: {
-                    name: id,
-                    value: inputValue
-                  }
-                });
-              }
-              setShowSuggestions(false);
+      <Input
+        ref={inputRef}
+        id={id}
+        name={id}
+        type="text"
+        placeholder={placeholder}
+        value={inputValue}
+        onChange={handleInputChange}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter') {
+            if (onChange) {
+              onChange({
+                target: {
+                  name: id,
+                  value: inputValue
+                }
+              });
             }
-          }}
-          onFocus={handleFocus}
-          onBlur={handleBlur}
-          required={required}
-          className="w-full bg-gray-800 text-white"
-          style={{width: "100%", boxSizing: "border-box"}}
-          autoComplete="off"
-        />
+            setShowSuggestions(false);
+          }
+        }}
+        onFocus={handleFocus}
+        onBlur={handleBlur}
+        required={required}
+        className="w-full bg-gray-800 text-white transition-all duration-200"
+        style={{width: "100%", boxSizing: "border-box"}}
+        autoComplete="off"
+      />
         
         {showSuggestions && suggestions.length > 0 && (
           <ul 

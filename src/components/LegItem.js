@@ -19,7 +19,7 @@ const transportModeClasses = {
 
 const LegItem = ({ leg, onEdit, onDelete }) => {
   return (
-    <Card className="mb-2 shadow-sm bg-gray-700 border border-gray-600">
+    <Card className="mb-2 shadow-sm bg-gray-700 border border-gray-600 hover:shadow-md transition-all duration-200">
       <CardContent className="p-3 flex items-center justify-between">
         <div className="flex items-center">
           <div className={`transport-icon text-white ${transportModeClasses[leg.transport_mode] || ''}`}>
@@ -32,10 +32,10 @@ const LegItem = ({ leg, onEdit, onDelete }) => {
         </div>
         <div className="flex space-x-1 ml-2 flex-shrink-0">
           <Button 
-            variant="ghost" 
+            variant="secondary" 
             size="sm" 
             onClick={() => onEdit(leg)}
-            className="px-2 h-8 text-gray-300 hover:bg-gray-600"
+            className="px-2 h-8 bg-gray-600 text-white hover:bg-gray-500 transition-all duration-200 hover:shadow-sm hover:-translate-y-0.5"
           >
             <Edit2 size={16} />
           </Button>
@@ -43,7 +43,7 @@ const LegItem = ({ leg, onEdit, onDelete }) => {
             variant="destructive" 
             size="sm" 
             onClick={() => onDelete(leg.id)}
-            className="px-2 h-8"
+            className="px-2 h-8 transition-all duration-200 hover:shadow-md hover:-translate-y-0.5"
           >
             <Trash2 size={16} />
           </Button>

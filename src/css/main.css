@@ -605,3 +605,79 @@ background-color: #404444 !important;
 .autocomplete-suggestion-item:hover {
 background-color: #4c5657 !important;
 }
+
+/* Enhanced Button Transitions and Transforms */
+button, 
+.button,
+.btn-primary,
+.btn-secondary,
+.btn-accent,
+.modern-button {
+  color: #000 !important;
+  background-color: #d1d5db !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
+/* Improved hover states for buttons */
+button:hover, 
+.button:hover,
+.btn-primary:hover, 
+.btn-secondary:hover,
+.btn-accent:hover,
+.modern-button:hover {
+  color: #fff !important;
+  background-color: #60787b !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+}
+
+/* Make sure icons match the text color */
+button svg, 
+.button svg,
+.btn-primary svg, 
+.btn-secondary svg,
+.btn-accent svg,
+.modern-button svg {
+  color: #000 !important;
+  transition: color 0.2s ease-in-out !important;
+}
+
+button:hover svg, 
+.button:hover svg,
+.btn-primary:hover svg, 
+.btn-secondary:hover svg,
+.btn-accent:hover svg,
+.modern-button:hover svg {
+  color: #fff !important;
+}
+
+/* Ghost button specific styling */
+button[variant="ghost"],
+.ghost-button {
+  background-color: transparent !important;
+  color: #000 !important;
+}
+
+button[variant="ghost"]:hover,
+.ghost-button:hover {
+  background-color: rgba(96, 120, 123, 0.8) !important;
+  color: #fff !important;
+}
+
+/* Destructive button specific styling */
+button[variant="destructive"],
+.destructive-button {
+  background-color: #fee2e2 !important;
+  color: #b91c1c !important;
+}
+
+button[variant="destructive"]:hover,
+.destructive-button:hover {
+  background-color: #b91c1c !important;
+  color: #fff !important;
+}
+
+/* Special effect for close buttons */
+.rounded-full:hover {
+  transform: scale(1.1) rotate(90deg);
+}
