@@ -102,7 +102,6 @@ const TripLegsPanel = ({ viewer }) => {
 
   // Calculate emissions and draw route when legs change
   useEffect(() => {
-    // In a real implementation, this would make an API call to Climatiq
     const calculateEmissionsAndDrawRoute = async () => {
       if (legs.length === 0) {
         setTotalEmissions(0);
@@ -112,11 +111,9 @@ const TripLegsPanel = ({ viewer }) => {
         return;
       }
       
-      // Placeholder calculation - in real app, would call Climatiq API
       const calculatedEmissions = legs.reduce((sum) => sum + Math.random() * 500 + 100, 0);
       setTotalEmissions(calculatedEmissions.toFixed(2));
       
-      // Generate payload and draw route
       const payload = generateClimatePayload();
       if (payload && viewer) {
         const response = await climatiqApi.generateMockEmissionsResponse(payload);

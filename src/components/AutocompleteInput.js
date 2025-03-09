@@ -103,10 +103,7 @@ const AutocompleteInput = ({
   };
 
   // Handle input blur
-  const handleBlur = () => {
-    // Don't do anything on blur - we only want to update when a suggestion is selected
-    // or when the user explicitly presses enter
-  };
+  const handleBlur = () => {};
 
   // Handle input focus
   const handleFocus = () => {

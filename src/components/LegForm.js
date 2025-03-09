@@ -105,7 +105,6 @@ const LegForm = ({ legData, onSave, onCancel }) => {
     switch(formData.transport_mode) {
       case 'road':
         return (
-          // Changed this div's background color to #464b50 (dropdown color)
           <div className="p-4 rounded-md" style={{ backgroundColor: "#2a2e31" }}>
             <div className="mb-4">
               <Label htmlFor="region" className="block mb-1 pl-1 flex items-center text-white">
@@ -121,7 +120,7 @@ const LegForm = ({ legData, onSave, onCancel }) => {
                 style={{
                   width: "100%", 
                   boxSizing: "border-box", 
-                  backgroundColor: "#2a2e31", // Changed to match input bg
+                  backgroundColor: "#2a2e31",
                   color: "white"
                 }}
               >
