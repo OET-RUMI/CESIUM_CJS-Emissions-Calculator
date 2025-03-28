@@ -100,7 +100,7 @@ module.exports = {
       directory: path.join(__dirname, 'dist')
     },
     compress: true,
-    port: 8080,
+    port: env.DEVSERVER_PORT ? parseInt(env.DEVSERVER_PORT, 10) : 8080,
     hot: true,
     open: true
   }
