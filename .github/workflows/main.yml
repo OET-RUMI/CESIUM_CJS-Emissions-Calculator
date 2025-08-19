@@ -35,3 +35,7 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{ env.IMAGE }}
+          build-args: |
+            CESIUM_ION_TOKEN=${{ secrets.CESIUM_ION_TOKEN }}
+            CLIMATIQ_API_KEY=${{ secrets.CLIMATIQ_API_KEY }}
+            DEVSERVER_PORT=${{ secrets.DEVSERVER_PORT }}
